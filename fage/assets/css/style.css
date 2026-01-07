@@ -552,3 +552,176 @@ footer {
 }
 .news-content h3 { font-size: 1.8rem; font-weight: 700; color: var(--text-color); margin-bottom: 1rem; }
 .news-content p { margin-bottom: 1.5rem; font-size: 1.1rem; }
+
+/* CSS SPÉCIFIQUE POUR CETTE PAGE */
+        body { background-color: #f3f4f6; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 20px; }
+
+        /* Style des cartes Missions */
+        .mission-admin-card {
+            background: white; border-radius: 10px; padding: 20px;
+            margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 5px solid #2563eb; /* Bordure bleue */
+        }
+
+        .header-mission { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .titre-mission { font-size: 1.3rem; font-weight: bold; color: #1f2937; }
+        .date-mission { color: #6b7280; font-weight: bold; }
+
+        /* La barre de progression (x/10) */
+        .compteur-box { background: #eff6ff; padding: 10px 20px; border-radius: 8px; text-align: right; }
+        .chiffre-compteur { font-size: 1.5rem; font-weight: 800; color: #2563eb; }
+        .label-compteur { font-size: 0.8rem; color: #60a5fa; text-transform: uppercase; }
+
+        /* Liste des inscrits */
+        .liste-inscrits { margin: 15px 0; padding: 10px; background: #f9fafb; border-radius: 5px; }
+        .liste-inscrits h4 { margin: 0 0 10px 0; font-size: 0.9rem; color: #4b5563; }
+        .tag-benevole {
+            display: inline-block; background: #d1fae5; color: #065f46;
+            padding: 3px 8px; border-radius: 15px; font-size: 0.85rem; margin-right: 5px; margin-bottom: 5px;
+        }
+
+        /* Formulaire d'ajout rapide */
+        .form-ajout-rapide {
+            margin-top: 15px; padding-top: 15px; border-top: 1px dashed #e5e7eb;
+            display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+        }
+        .form-ajout-rapide input {
+            padding: 8px; border: 1px solid #d1d5db; border-radius: 5px; flex: 1;
+        }
+        .btn-mini {
+            background-color: #1f2937; color: white; border: none; padding: 8px 15px;
+            border-radius: 5px; cursor: pointer; font-weight: bold;
+        }
+        .btn-mini:hover { background-color: #374151; }
+
+        .nav-admin { margin-bottom: 20px; }
+        .nav-admin a { text-decoration: none; color: #666; margin-right: 15px; }
+        .nav-admin a.active { color: #2563eb; font-weight: bold; }
+         /* MÊME CSS QUE LES AUTRES PAGES ADMIN */
+                .admin-section { max-width: 900px; margin: 0 auto; }
+
+                /* Alertes */
+                .alert { padding: 15px; border-radius: 8px; margin-bottom: 20px; font-weight: bold; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+                .success { background: #d1fae5; color: #065f46; border: 1px solid #34d399; }
+                .error { background: #fee2e2; color: #991b1b; border: 1px solid #f87171; }
+
+                /* Formulaire */
+                .form-card { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+                .form-group { margin-bottom: 15px; }
+                .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #374151; }
+                .form-control { width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem; }
+                .form-control:focus { outline: 2px solid #2563eb; border-color: transparent; }
+                textarea.form-control { height: 80px; resize: vertical; }
+
+                .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+                /* Boutons */
+                .btn-blue { background-color: #2563eb; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; transition: background 0.2s; }
+                .btn-blue:hover { background-color: #1d4ed8; }
+
+                /* Liste */
+                .list-header { margin-top: 50px; margin-bottom: 20px; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+
+                .article-item {
+                    display: flex; align-items: center; background: white;
+                    padding: 15px; margin-bottom: 15px; border-radius: 8px;
+                    border: 1px solid #e5e7eb; transition: transform 0.2s;
+                }
+                .article-item:hover { transform: translateY(-2px); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+
+                /* Icône Mission */
+                .mission-icon {
+                    width: 60px; height: 60px; background-color: #fef3c7; color: #d97706; /* Jaune/Orange pour les missions */
+                    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+                    font-size: 1.5rem; margin-right: 20px; font-weight: bold; border: 2px solid #fde68a;
+                }
+
+                .art-info { flex-grow: 1; }
+                .art-title { font-size: 1.1rem; font-weight: bold; color: #111827; margin: 0 0 5px 0; }
+                .art-sub { font-size: 0.9rem; color: #6b7280; margin-bottom: 5px; }
+
+                /* Badges */
+                .badge { display: inline-block; background: #f3f4f6; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; color: #4b5563; border: 1px solid #e5e7eb; margin-right: 5px;}
+
+                .btn-delete {
+                    background: #fef2f2; color: #dc2626; text-decoration: none;
+                    padding: 8px 12px; border-radius: 6px; font-weight: bold; font-size: 0.9rem; border: 1px solid #fee2e2;
+                }
+                .btn-delete:hover { background: #fee2e2; }
+  /* CSS SPÉCIFIQUE POUR L'ADMIN */
+        .admin-section { max-width: 900px; margin: 0 auto; }
+
+        /* Alertes */
+        .alert {
+            padding: 15px; border-radius: 8px; margin-bottom: 20px;
+            font-weight: bold; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .success { background: #d1fae5; color: #065f46; border: 1px solid #34d399; }
+        .error { background: #fee2e2; color: #991b1b; border: 1px solid #f87171; }
+
+        /* Formulaire */
+        .form-card { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #374151; }
+        .form-control { width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem; }
+        .form-control:focus { outline: 2px solid var(--primary-blue); border-color: transparent; }
+        textarea.form-control { height: 120px; resize: vertical; }
+
+        /* Liste des articles (Avant-goût) */
+        .list-header { margin-top: 50px; margin-bottom: 20px; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+
+        .article-item {
+            display: flex; align-items: center; background: white;
+            padding: 15px; margin-bottom: 15px; border-radius: 8px;
+            border: 1px solid #e5e7eb; transition: transform 0.2s;
+        }
+        .article-item:hover { transform: translateY(-2px); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+
+        .art-img {
+            width: 80px; height: 80px; object-fit: cover; border-radius: 6px;
+            margin-right: 20px; background-color: #f3f4f6;
+        }
+        .art-info { flex-grow: 1; }
+        .art-title { font-size: 1.1rem; font-weight: bold; color: #111827; margin: 0 0 5px 0; }
+        .art-date { font-size: 0.85rem; color: #6b7280; }
+
+        .art-actions { display: flex; gap: 10px; }
+
+        .btn-view {
+            background: #eff6ff; color: var(--primary-blue); text-decoration: none;
+            padding: 8px 12px; border-radius: 6px; font-weight: bold; font-size: 0.9rem;
+        }
+        .btn-view:hover { background: #dbeafe; }
+
+        .btn-delete {
+            background: #fef2f2; color: #dc2626; text-decoration: none;
+            padding: 8px 12px; border-radius: 6px; font-weight: bold; font-size: 0.9rem; border: 1px solid #fee2e2;
+        }
+        .btn-delete:hover { background: #fee2e2; }
+             .newsletter-card {
+                    background: white; padding: 40px; border-radius: 15px;
+                    box-shadow: 0 10px 25px rgba(0,0,0,0.05); max-width: 700px; margin: 0 auto;
+                }
+                .form-row { display: flex; gap: 20px; margin-bottom: 20px; }
+                .form-col { flex: 1; }
+                label { display: block; font-weight: bold; margin-bottom: 8px; color: #333; }
+                .required { color: #dc2626; }
+                input[type="text"], input[type="email"] {
+                    width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 1rem;
+                }
+                .btn-submit {
+                    background-color: #5a73e8; color: white; width: 100%; padding: 15px; border: none;
+                    border-radius: 30px; font-weight: bold; font-size: 1.1rem; cursor: pointer; margin-top: 20px;
+                }
+                .btn-submit:hover { opacity: 0.9; }
+
+                /* Style spécifique pour le message de succès */
+                .success-box {
+                    text-align: center; padding: 50px 20px;
+                }
+                .success-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+                .btn-home {
+                    display: inline-block; background: #10b981; color: white; padding: 12px 30px;
+                    border-radius: 30px; text-decoration: none; font-weight: bold; margin-top: 20px;
+                }
