@@ -107,47 +107,7 @@ require "includes/head.php";
         </div>
 
     </main>
-
-    <style>
-        /* Un peu de style pour le tableau */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        th {
-            text-align: left;
-            background: #f3f4f6;
-            padding: 12px;
-            color: #555;
-        }
-
-        td {
-            border-bottom: 1px solid #eee;
-            padding: 12px;
-        }
-
-        tr:hover {
-            background-color: #f9fafb;
-        }
-
-        .date {
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        .btn-del {
-            color: #dc2626;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        .btn-del:hover {
-            text-decoration: underline;
-        }
-    </style>
+5
 </body>
 
 </html>

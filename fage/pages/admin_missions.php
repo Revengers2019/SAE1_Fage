@@ -1,4 +1,3 @@
-<<<<<<< HEAD:fage/pages/admin_missions.php
 <?php
 session_start();
 require 'includes/db.php';
