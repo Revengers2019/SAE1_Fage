@@ -3,7 +3,7 @@ session_start();
 require 'includes/db.php';
 // 1. SÉCURITÉ : Vérifier si on est admin
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: ?/=/login");
     exit();
 }
 

@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['prenom'] = $user['prenom'];
 
         // On redirige vers le tableau de bord (qu'on fera juste après)
-        header("Location: admin.php");
+        header("Location: ?/=/admin");
         exit();
     } else {
         $error = "Email ou mot de passe incorrect !";
@@ -61,7 +61,7 @@ require "includes/head.php";
         </form>
 
         <p style="text-align:center; margin-top:1.5rem;">
-            <a href="index.php" style="text-decoration:underline;">Retour au site</a>
+            <a href="?/=/" style="text-decoration:underline;">Retour au site</a>
         </p>
     </div>
 
