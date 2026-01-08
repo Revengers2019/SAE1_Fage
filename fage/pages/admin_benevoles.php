@@ -15,19 +15,20 @@ if (isset($_POST['ajouter_benevole'])) {
     $nom = htmlspecialchars($_POST['nom']);
     $prenom = htmlspecialchars($_POST['prenom']);
 
-    if (empty($_POST['email'])) $email = null;
-    else $email = htmlspecialchars($_POST['email']);
-    
+    if (empty($_POST['email']))
+        $email = null;
+    else
+        $email = htmlspecialchars($_POST['email']);
+
     $id_mission = intval($_POST['id_mission']); // L'ID est envoyé par le formulaire caché
 
     if (!empty($nom) && !empty($id_mission)) {
         // On insère le bénévole avec l'ID de la mission direct
         $req = $pdo->prepare("INSERT INTO benevoles (nom, prenom, email, id_mission) VALUES (?, ?, ?, ?)");
-        if ($req->execute([$nom, $prenom, $email, $id_mission])) {
+        if ($req->execute([$nom, $prenom, $email, $id_mission]))
             $msg = "✅ Bénévole ajouté à l'équipe !";
-        } else {
+        else
             $msg = "❌ Erreur lors de l'ajout.";
-        }
     } else {
         $msg = "❌ Veuillez mettre au moins un nom.";
     }

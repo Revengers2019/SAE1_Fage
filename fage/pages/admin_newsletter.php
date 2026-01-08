@@ -54,7 +54,7 @@ require "includes/head.php";
             <span style="color:white; font-weight:bold;">Admin Zone</span>
             <div class="nav-links">
                 <a href="?/=/admin" style="color:white; margin-right:15px; text-decoration:none;">Retour</a>
-                <a href="?/=/" class="btn btn-white">Déconnexion</a>
+                <a href="?/=/logout" class="btn btn-white">Déconnexion</a>
             </div>
         </div>
     </nav>
