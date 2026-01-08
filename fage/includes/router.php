@@ -75,23 +75,26 @@ $routes = [
     ]
 ];
 
+// récupère la route depuis ?/=
 $route = $_GET['/'] ?? '/';
 
+// 1️⃣ boucle sur toutes les routes
 foreach ($routes as $r) {
-    // Cas spécial pour /read
-    if (substr($route, 0, 5) === '/read') {
+
+    // --- cas spécial pour read?id=xx ---
+    if ($r['path'] === '/read' && str_starts_with($route, '/read')) {
         require __DIR__ . '/../pages/read.php';
         exit;
     }
 
-    // Routes normales
+    // --- routes normales ---
     if ($route === $r['path']) {
         require __DIR__ . '/../pages/' . $r['link'];
         exit;
     }
 }
 
-// si aucune route trouvée
+// 404 si aucune route correspond
 http_response_code(404);
 echo '404';
 
