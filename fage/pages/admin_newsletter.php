@@ -51,7 +51,7 @@ require "includes/head.php";
 
     <nav class="navbar">
         <div class="nav-container">
-            <span style="color:white; font-weight:bold;">Admin Zone</span>
+            <span style="color:white; font-weight:bold;">Newsletter</span>
             <div class="nav-links">
                 <a href="?/=/admin" style="color:white; margin-right:15px; text-decoration:none;">Retour</a>
                 <a href="?/=/logout" class="btn btn-white">Déconnexion</a>
@@ -120,7 +120,6 @@ require "includes/head.php";
         </div>
 
     </main>
-    5
 </body>
 
 </html>

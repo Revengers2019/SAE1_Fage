@@ -1,113 +1,115 @@
 <?php
-session_start();
+
 require 'includes/db.php';
-// 1. SÉCURITÉ : Vérifier si on est admin
-if (!isset($_SESSION['user_id'])) {
-    header("Location: ?/=/login");
-    exit();
-}
+$message_succes = false; // Par défaut, on n'a pas encore réussi
+$erreur = "";
 
-$message = "";
+// SI LE FORMULAIRE EST ENVOYÉ
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['email'])) {
 
-// 2. SUPPRESSION : Si on clique sur la poubelle
-if (isset($_GET['supprimer'])) {
-    $id = $_GET['supprimer'];
-    try {
-        $stmt = $pdo->prepare("DELETE FROM newsletter WHERE id_inscrit = ?");
-        $stmt->execute([$id]);
-        $message = "🗑️ L'email a été supprimé de la liste.";
-    } catch (Exception $e) {
-        $message = "Erreur lors de la suppression.";
+    $prenom = htmlspecialchars($_POST['prenom']);
+    $nom = htmlspecialchars($_POST['nom']);
+    $email = htmlspecialchars($_POST['email']);
+    $orga = htmlspecialchars($_POST['organisation']);
+
+    // On vérifie l'email
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        try {
+            $sql = "INSERT INTO newsletter (nom, prenom, email, organisation, date_inscription) VALUES (?, ?, ?, ?, NOW())";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$nom, $prenom, $email, $orga]);
+
+            // C'EST GAGNÉ ! On passe la variable à TRUE pour changer l'affichage plus bas
+            $message_succes = true;
+
+        } catch (PDOException $e) {
+            $erreur = "Cet email est déjà inscrit !";
+        }
+    } else {
+        $erreur = "Format d'email invalide.";
     }
 }
-
-// 3. AFFICHAGE : Récupérer tous les inscrits (du plus récent au plus vieux)
-$stmt = $pdo->query("SELECT * FROM newsletter ORDER BY date_inscription DESC");
-$inscrits = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php
-$title = "Gestion Newsletter";
-require "includes/head.php";
-?>
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription Newsletter | FAGE</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-<body style="background-color: #f9fafb;">
+<body style="background-color: #f3f4f6;">
+    <?php include 'includes/nav.php'; ?>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <span style="color:white; font-weight:bold;">Admin Zone</span>
-            <div class="nav-links">
-                <a href="?/=/admin" style="color:white; margin-right:15px; text-decoration:none;">Retour</a>
-                <a href="?/=/" class="btn btn-white">Déconnexion</a>
-            </div>
-        </div>
-    </nav>
 
-    <main class="container" style="padding-top: 100px; max-width: 800px;">
+    <main class="container" style="padding-top: 100px; padding-bottom: 60px;">
 
-        <div class="card">
-            <h2
-                style="color:var(--primary-blue); margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom:10px;">
-                📧 Liste des inscrits (<?php echo count($inscrits); ?>)
-            </h2>
+        <div class="newsletter-card">
 
-            <?php if ($message): ?>
-                <div
-                    style="background:#fee2e2; color:#991b1b; padding:10px; border-radius:5px; margin-bottom:20px; text-align:center;">
-                    <?php echo $message; ?>
+            <?php if ($message_succes == true): ?>
+
+                <div class="success-box">
+                    <span class="success-icon">✅</span>
+                    <h1 style="color: #065f46; margin-bottom: 15px;">Félicitations !</h1>
+                    <p style="font-size: 1.1rem; color: #4b5563;">
+                        Vous êtes bien inscrit(e) à la newsletter de la FAGE.<br>
+                        Vous recevrez bientôt nos actualités.
+                    </p>
+                    <a href="?/=/" class="btn-home">Retourner à l'accueil</a>
                 </div>
-            <?php endif; ?>
 
-            <?php if (count($inscrits) == 0): ?>
-                <p style="text-align:center; color:gray; padding: 20px;">
-                    Personne n'est encore inscrit à la newsletter.
-                </p>
             <?php else: ?>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nom / Prénom</th>
-                            <th>Organisation</th>
-                            <th>Email</th>
-                            <th>Date</th>
-                            <th style="text-align:right;">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($inscrits as $i): ?>
-                            <tr>
-                                <td style="font-weight:bold; color:#333;">
-                                    <?php echo htmlspecialchars($i['nom'] . " " . $i['prenom']); ?>
-                                </td>
-                                <td>
-                                    <?php echo htmlspecialchars($i['organisation']); ?>
-                                </td>
-                                <td style="color:#2563eb;">
-                                    <?php echo htmlspecialchars($i['email']); ?>
-                                </td>
-                                <td class="date">
-                                    <?php echo date("d/m/Y", strtotime($i['date_inscription'])); ?>
-                                </td>
-                                <td style="text-align:right;">
-                                    <a href="admin_newsletter.php?supprimer=<?php echo $i['id_inscrit']; ?>" class="btn-del"
-                                        onclick="return confirm('Supprimer cet inscrit ?');">
-                                        🗑️
-                                    </a>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                <h1 style="color: #111827; margin-bottom: 10px;">Inscription à la newsletter</h1>
+                <p style="color: #6b7280; margin-bottom: 20px;">
+                    Remplissez le formulaire ci-dessous pour rejoindre notre réseau.
+                </p>
+
+                <?php if ($erreur): ?>
+                    <div
+                        style="background:#fee2e2; color:#991b1b; padding:10px; border-radius:5px; margin-bottom:20px; text-align:center; font-weight:bold;">
+                        ⚠️ <?php echo $erreur; ?>
+                    </div>
+                <?php endif; ?>
+
+                <p style="color: #dc2626; font-size: 0.9rem; margin-bottom: 25px;">* Champs obligatoires.</p>
+
+                <form action="" method="POST">
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Prénom <span class="required">*</span></label>
+                            <input type="text" name="prenom" required>
+                        </div>
+                        <div class="form-col">
+                            <label>Nom <span class="required">*</span></label>
+                            <input type="text" name="nom" required>
+                        </div>
+                    </div>
+
+                    <div class="form-col" style="margin-bottom: 20px;">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" name="email" required>
+                    </div>
+
+                    <div class="form-col">
+                        <label>Organisation</label>
+                        <input type="text" name="organisation">
+                    </div>
+
+                    <button type="submit" class="btn-submit">S'inscrire</button>
+
+                </form>
 
             <?php endif; ?>
+
         </div>
 
     </main>
 
+    <?php include 'includes/footer.php'; ?>
 </body>
 
 </html>
