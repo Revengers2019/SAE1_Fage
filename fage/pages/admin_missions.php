@@ -11,11 +11,23 @@ $message = "";
 $message_type = "";
 
 // --- 1. SUPPRIMER UNE MISSION ---
-if (isset($_GET['delete'])) {
-    $id = $_GET['delete'];
+$route = $_GET['/'] ?? '/';
+$id_a_supprimer = null;
+
+// Vérifie si la route contient ?supprimer=
+$supPos = strpos($route, '?supprimer=');
+if ($supPos !== false) {
+    $possibleId = substr($route, $supPos + strlen('?supprimer='));
+    if (ctype_digit($possibleId)) {
+        $id_a_supprimer = (int) $possibleId;
+        $route = '/missions_admin';
+    }
+}
+
+if ($id_a_supprimer !== null) {
     try {
-        $stmt = $pdo->prepare("DELETE FROM missions WHERE id_mission = ?");
-        $stmt->execute([$id]);
+        $stmt = $pdo->prepare("DELETE FROM missions WHERE id_missions = ?");
+        $stmt->execute([$id_a_supprimer]);
         $message = "🗑️ Mission supprimée avec succès !";
         $message_type = "success";
     } catch (Exception $e) {
@@ -164,7 +176,7 @@ require "includes/head.php";
                     </div>
 
                     <div class="art-actions">
-                        <a href="missions_admin?supprimer=<?php echo $m['id_mission']; ?>" class="btn-delete"
+                        <a href="?/=/missions_admin?supprimer=<?php echo $m['id_mission']; ?>" class="btn-delete"
                             onclick="return confirm('Supprimer cette mission ?');" title="Supprimer">
                             🗑️ Suppr.
                         </a>
