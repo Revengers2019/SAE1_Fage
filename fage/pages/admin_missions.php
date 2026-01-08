@@ -10,11 +10,10 @@ if (!isset($_SESSION['user_id'])) {
 $message = "";
 $message_type = "";
 
-// --- 1. SUPPRIMER UNE MISSION ---
+// --- 1. SUPPRIMER UNE MISSION --- \\
 $route = $_GET['/'] ?? '/';
 $id_a_supprimer = null;
 
-// Vérifie si la route contient ?supprimer=
 $supPos = strpos($route, '?supprimer=');
 if ($supPos !== false) {
     $possibleId = substr($route, $supPos + strlen('?supprimer='));
@@ -36,7 +35,7 @@ if ($id_a_supprimer !== null) {
     }
 }
 
-// --- 2. AJOUTER UNE MISSION ---
+// --- 2. AJOUTER UNE MISSION --- \\
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ajouter'])) {
     if (!empty($_POST['titre']) && !empty($_POST['date_mission'])) {
 
@@ -65,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ajouter'])) {
     }
 }
 
-// --- 3. RÉCUPÉRATION DE LA LISTE ---
+// --- 3. RÉCUPÉRATION DE LA LISTE --- \\
 try {
     $stmt = $pdo->query("SELECT * FROM missions ORDER BY date_mission ASC");
     $missions = $stmt->fetchAll();

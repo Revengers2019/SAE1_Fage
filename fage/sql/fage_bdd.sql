@@ -74,7 +74,7 @@ CREATE TABLE `benevoles` (
   `id_benevole` int(11) NOT NULL,
   `nom` varchar(100) NOT NULL,
   `prenom` varchar(100) NOT NULL,
-  `email` varchar(150) NOT NULL,
+  `email` varchar(150) NULL,
   `mot_de_passe` varchar(255) NOT NULL,
   `role` varchar(50) DEFAULT 'benevole',
   `id_mission` int(11) DEFAULT NULL

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require 'includes/db.php';
-// 1. SÉCURITÉ : Vérifier si on est admin
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
@@ -9,11 +9,10 @@ if (!isset($_SESSION['user_id'])) {
 
 $message = "";
 
-// 2. SUPPRESSION : Si on clique sur la poubelle
+// Supprime si on a clique sur la poubelle \\
 $route = $_GET['/'] ?? '/';
 $id_a_supprimer = null;
 
-// Vérifie si la route contient ?supprimer=
 $supPos = strpos($route, '?supprimer=');
 if ($supPos !== false) {
     $possibleId = substr($route, $supPos + strlen('?supprimer='));
@@ -35,7 +34,7 @@ if ($id_a_supprimer !== null) {
     }
 }
 
-// 3. AFFICHAGE : Récupérer tous les inscrits (du plus récent au plus vieux)
+// Récupére tous les inscrits (du plus récent au plus vieux) \\
 $stmt = $pdo->query("SELECT * FROM newsletter ORDER BY date_inscription DESC");
 $inscrits = $stmt->fetchAll();
 ?>

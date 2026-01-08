@@ -14,7 +14,6 @@ $message_type = "";
 $route = $_GET['/'] ?? '/';
 $id_a_supprimer = null;
 
-// Vérifie si la route contient ?supprimer=
 $supPos = strpos($route, '?supprimer=');
 if ($supPos !== false) {
     $possibleId = substr($route, $supPos + strlen('?supprimer='));

@@ -14,7 +14,10 @@ $msg = "";
 if (isset($_POST['ajouter_benevole'])) {
     $nom = htmlspecialchars($_POST['nom']);
     $prenom = htmlspecialchars($_POST['prenom']);
-    $email = htmlspecialchars($_POST['email']);
+
+    if (empty($_POST['email'])) $email = null;
+    else $email = htmlspecialchars($_POST['email']);
+    
     $id_mission = intval($_POST['id_mission']); // L'ID est envoyé par le formulaire caché
 
     if (!empty($nom) && !empty($id_mission)) {
@@ -152,4 +155,5 @@ require "includes/head.php";
     </div>
 
 </body>
+
 </html>
