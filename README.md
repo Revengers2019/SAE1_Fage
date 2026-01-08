@@ -19,3 +19,43 @@ Groupe 205 :
 4. C'EST FINI ! Aller sur --> http://localhost/fage
 
 🔑 Compte Admin : Email --> admin@fage.fr Mdp --> admin
+
+
+
+fage/
+├── assets
+  ├──css
+      └──style.css
+  ├──js
+      └── script.js
+├── includes
+  └──db.php
+  └──footer.php
+  └──head.php
+  └──nav.php
+  └──router.php
+├── pages*
+  └──Civique.php
+  └──Droit.php
+  └──Fage.php
+  └──accueil.php
+  └──actualites.php
+  └──admin.php
+  └──admin_actus.php
+  └──admin_benevoles.php
+  └──admin_missions.php
+  └──admin_newsletter.php
+  └──formationFage.php
+  └──guideElu.php
+  └──login.php
+  └──logout.php
+  └──missions.php
+  └──newsletter.php
+  └──read.php
+  └──scolariteEtudiant.php
+├── sql
+  └──fage_bdd.sql
+├── index.php
+
+  
+       
