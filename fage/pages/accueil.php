@@ -2,7 +2,6 @@
 <html lang="fr">
 
 <?php
-$otherLinks = '<link rel="icon" href="https://img.freepik.com/vecteurs-premium/lettre-f-bleue-blanche-est-fond-bleu_462839-1528.jpg" type="image/jpeg">';
 $title = "FAGE | Fédération des Associations Générales Étudiantes";
 require "includes/head.php";
 ?>
@@ -22,8 +21,8 @@ require "includes/head.php";
                     <h1>FAGE — Fédération des Associations Générales Étudiantes</h1>
                     <p>Informer, défendre, innover — pour une vie étudiante plus juste.</p>
                     <div class="hero-buttons">
-                        <a href="#actions" class="btn btn-white">Nos actions</a>
-                        <a href="#actualites" class="btn btn-outline">Actualités</a>
+                        <a href="https://www.helloasso.com/associations/federation-des-associations-generales-etudiantes-fage/formulaires/1" class="btn btn-don">Faire un don</a>
+                        <a href="?/=/actualites" class="btn btn-outline">Actualités</a>
                     </div>
                 </div>
             </div>

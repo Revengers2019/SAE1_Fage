@@ -8,19 +8,16 @@
    ========================================= */
 :root {
     --primary-blue: #3b82f6;
-    /* Bleu FAGE Principal */
     --dark-blue: #2563eb;
-    /* Bleu Foncé (Hover) */
+    
+    /* Dégradé */
     --gradient-start: #3b82f6;
-    /* Début Gradient */
     --gradient-end: #60a5fa;
-    /* Fin Gradient */
+
     --text-color: #111827;
-    /* Noir/Gris très foncé */
     --text-light: #6b7280;
-    /* Gris texte secondaire */
     --bg-color: #f9fafb;
-    /* Fond gris très clair */
+    --don: #d4203e;
     --white: #ffffff;
     --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --radius: 1rem;
@@ -256,6 +253,15 @@ img {
 .btn-white {
     background: white;
     color: var(--primary-blue);
+}
+
+.btn-don {
+    background: var(--don);
+    color: white;
+}
+
+.btn-don::after{
+    content: ' ♥';
 }
 
 .btn-outline {

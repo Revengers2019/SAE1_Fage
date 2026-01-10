@@ -17,6 +17,7 @@
             <li><a href="?/=/scolarite">Scolarité</a></li>
             <li><a href="?/=/civique">Civique</a></li>
             <?php
+            session_start();
             if (!isset($_SESSION['user_id']))
                 echo '<li><a href="?/=/login" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem;">Se connecter</a></li>';
             else
@@ -36,6 +37,7 @@
         <li><a href="?/=/scolarite">Scolarité</a></li>
         <li><a href="?/=/civique">Civique</a></li>
         <?php
+        session_start();
         if (!isset($_SESSION['user_id']))
             echo '<li><a href="?/=/login" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem;">Se connecter</a></li>';
         else

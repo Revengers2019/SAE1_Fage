@@ -14,7 +14,6 @@ try {
 <html lang="fr">
 
 <?php
-$otherLinks = '<link rel="icon" href="https://img.freepik.com/vecteurs-premium/lettre-f-bleue-blanche-est-fond-bleu_462839-1528.jpg" type="image/jpeg">';
 $title = "Missions Bénévoles | FAGE";
 require "includes/head.php";
 ?>
