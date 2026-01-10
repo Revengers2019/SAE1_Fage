@@ -134,6 +134,7 @@ img {
 @media (min-width: 1024px) {
     .nav-links {
         display: flex;
+        align-items: center;
     }
 }
 

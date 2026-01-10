@@ -49,15 +49,10 @@ require "includes/head.php";
 
 <body style="background-color: #f9fafb;">
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <span style="color:white; font-weight:bold;">Newsletter</span>
-            <div class="nav-links">
-                <a href="?/=/admin" style="color:white; margin-right:15px; text-decoration:none;">Retour</a>
-                <a href="?/=/logout" class="btn btn-white">Déconnexion</a>
-            </div>
-        </div>
-    </nav>
+    <?php
+    $nom = "Newsletter";
+    require "includes/navbar.admin.php";
+    ?>
 
     <main class="container" style="padding-top: 100px; max-width: 800px;">
 

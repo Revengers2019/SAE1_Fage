@@ -16,7 +16,12 @@
             <li><a href="?/=/guideElu">Le Guide</a></li>
             <li><a href="?/=/scolarite">Scolarité</a></li>
             <li><a href="?/=/civique">Civique</a></li>
-            <li><a href="?/=/login">Se connecter</a></li>
+            <?php
+            if (!isset($_SESSION['user_id']))
+                echo '<li><a href="?/=/login" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem;">Se connecter</a></li>';
+            else
+                echo '<a href="?/=/admin" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem;">Votre compte</a>';
+            ?>
         </ul>
     </div>
 
@@ -30,7 +35,12 @@
         <li><a href="?/=/guideElu">Le Guide</a></li>
         <li><a href="?/=/scolarite">Scolarité</a></li>
         <li><a href="?/=/civique">Civique</a></li>
-        <li><a href="?/=/login"><i class="bi bi-person-circle"></i></a></li>
+        <?php
+        if (!isset($_SESSION['user_id']))
+            echo '<li><a href="?/=/login" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem;">Se connecter</a></li>';
+        else
+            echo '<a href="?/=/" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem;">Votre compte</a>';
+        ?>
     </ul>
 
 </nav>

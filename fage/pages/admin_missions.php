@@ -83,17 +83,10 @@ require "includes/head.php";
 
 <body style="background-color: #f9fafb;">
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <span style="color:white; font-weight:bold; font-size:1.2rem;">
-                Admin : <?php echo htmlspecialchars($_SESSION['prenom']); ?>
-            </span>
-            <div class="nav-links">
-                <a href="?/=/admin" style="color:white; margin-right: 15px; text-decoration:none;">Retour</a>
-                <a href="?/=/" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem;">Déconnexion</a>
-            </div>
-        </div>
-    </nav>
+    <?php 
+    $nom = "Admin : " . htmlspecialchars($_SESSION['prenom']);
+    require "includes/navbar.admin.php";
+    ?>
 
     <main class="container admin-section" style="padding-top: 100px;">
 
