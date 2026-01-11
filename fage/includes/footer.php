@@ -31,7 +31,7 @@
             <h3>Vie Étudiante</h3>
             <ul>
                 <li><a href="?/=/scolariteEtudiant">Scolarité & Précarité</a></li>
-                <li><a href="?/=/read">Coût de la rentrée</a></li>
+                <li><a href="?/=/read?id=12">Coût de la rentrée</a></li>
             </ul>
         </div>
 
@@ -39,7 +39,7 @@
             <h3>Contact</h3>
             <ul>
                 <li><a href="mailto:contact@fage.org">contact@fage.org</a></li>
-                <li>01.40.33.70.70</li>
+                <li><a href="tel:0140337070">01.40.33.70.70</a></li>
                 <li>79 rue Périer, Montrouge</li>
             </ul>
         </div>
