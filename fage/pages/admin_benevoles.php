@@ -3,8 +3,12 @@ session_start();
 require 'includes/db.php'; // Ton fichier de connexion rangé
 
 require 'includes/roleverif.php';
-if(!isadmin()){
+if (!isset($_SESSION['user_id'])) {
     header("Location: ?/=/login");
+    exit();
+}
+if(!isadmin()){
+    header("Location: ?/=/");
     exit();
 }
 

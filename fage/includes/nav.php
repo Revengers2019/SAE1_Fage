@@ -1,3 +1,19 @@
+<?php
+session_start();
+require 'includes/roleverif.php';
+$liens = [
+    ['text' => 'Accueil', 'link' => ''],
+    ['text' => 'La FAGE', 'link' => 'fage'],
+    ['text' => 'Actualités', 'link' => 'actualites'],
+    ['text' => 'Missions', 'link' => 'missions'],
+    ['text' => 'Nos droits', 'link' => 'droit'],
+    ['text' => 'Formation', 'link' => 'formationFage'],
+    ['text' => 'Le Guide', 'link' => 'guideElu'],
+    ['text' => 'Scolarité', 'link' => 'scolarite'],
+    ['text' => 'Civique', 'link' => 'civique']
+];
+?>
+
 <nav class="navbar">
     <div class="nav-container">
         <a href="index.php" class="nav-logo">
@@ -7,41 +23,37 @@
         <button id="menu-btn" class="hamburger"><span></span><span></span><span></span></button>
 
         <ul class="nav-links">
-            <li><a href="?/=/">Accueil</a></li>
-            <li><a href="?/=/fage">La FAGE</a></li>
-            <li><a href="?/=/actualites">Actualités</a></li>
-            <li><a href="?/=/missions">Missions</a></li>
-            <li><a href="?/=/droit">Nos Droits</a></li>
-            <li><a href="?/=/formationFage">Formation</a></li>
-            <li><a href="?/=/guideElu">Le Guide</a></li>
-            <li><a href="?/=/scolarite">Scolarité</a></li>
-            <li><a href="?/=/civique">Civique</a></li>
             <?php
-            session_start();
+            foreach ($liens as $l) {
+                ?>
+                <li>
+                    <a href='?/=/<?= $l['link'] ?>'><?= $l['text'] ?></a>
+                </li>
+            <?php }
             if (!isset($_SESSION['user_id']))
                 echo '<li><a href="?/=/login" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem;">Se connecter</a></li>';
-            else
+            else if (isadmin())
                 echo '<a href="?/=/admin" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem;">Votre compte</a>';
+            else
+                echo '<a href="?/=/logout" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem;">Déconnexion</a>';
             ?>
         </ul>
     </div>
 
     <ul id="mobile-menu" class="mobile-menu">
-        <li><a href="?/=/">Accueil</a></li>
-        <li><a href="?/=/fage">La FAGE</a></li>
-        <li><a href="?/=/actualites">Actualités</a></li>
-        <li><a href="?/=/missions">Missions</a></li>
-        <li><a href="?/=/droit">Nos Droits</a></li>
-        <li><a href="?/=/formationFage">Formation</a></li>
-        <li><a href="?/=/guideElu">Le Guide</a></li>
-        <li><a href="?/=/scolarite">Scolarité</a></li>
-        <li><a href="?/=/civique">Civique</a></li>
         <?php
-        session_start();
+        foreach ($liens as $l) {
+            ?>
+            <li>
+                <a href='?/=/<?= $l['link'] ?>'><?= $l['text'] ?></a>
+            </li>
+        <?php }
         if (!isset($_SESSION['user_id']))
             echo '<li><a href="?/=/login" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem;">Se connecter</a></li>';
+        else if (isadmin())
+            echo '<a href="?/=/admin" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem;">Votre compte</a>';
         else
-            echo '<a href="?/=/" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem;">Votre compte</a>';
+            echo '<a href="?/=/logout" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem;">Déconnexion</a>';
         ?>
     </ul>
 
