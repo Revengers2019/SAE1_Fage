@@ -17,7 +17,7 @@ $liens = [
 <nav class="navbar">
     <div class="nav-container">
         <a href="index.php" class="nav-logo">
-            <img src="https://ageparis.org/agepwebcontent/uploads/2013/01/fage-blanc-logo-min.png" alt="Logo FAGE">
+            <img src="https://www.fage.org/ressources/images/60/1972,210x,Logo_FAGE_Blanc---Typo-Transparente.png" alt="Logo FAGE">
         </a>
 
         <button id="menu-btn" class="hamburger"><span></span><span></span><span></span></button>

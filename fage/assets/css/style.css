@@ -681,6 +681,8 @@ footer {
     color: white;
     padding: 1rem;
     text-align: center;
+    border-top-left-radius: var(--radius, 0.25rem);
+    border-top-right-radius: var(--radius, 0.25rem);
 }
 
 .mission-body {
