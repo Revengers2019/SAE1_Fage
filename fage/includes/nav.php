@@ -49,12 +49,13 @@ $liens = [
             </li>
         <?php }
         if (!isset($_SESSION['user_id']))
-            echo '<li><a href="?/=/login" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem;">Se connecter</a></li>';
+            echo '<li><a href="?/=/login" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem; color: #2563eb;">Se connecter</a></li>';
         else if (isadmin())
-            echo '<a href="?/=/admin" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem;">Votre compte</a>';
+            echo '<li><a href="?/=/admin" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem; color: #2563eb;">Votre compte</a></li>';
         else
-            echo '<a href="?/=/logout" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem;">Déconnexion</a>';
+            echo '<li><a href="?/=/logout" class="btn btn-white" style="padding:0.5rem 1rem; font-size:0.9rem; color: #2563eb;">Déconnexion</a></li>';
         ?>
     </ul>
+
 
 </nav>
