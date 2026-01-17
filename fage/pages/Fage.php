@@ -23,49 +23,58 @@ require "includes/head.php";
             </div>
         </section>
 
-        <section class="grid-2 reveal" style="margin-bottom: 4rem;" id="presentation">
-            <div>
-                <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-color);">
-                    Présentation</h2>
-                <p style="margin-bottom: 1rem;">Fondée en 1989, la FAGE regroupe près de 2 000 associations et
-                    syndicats, soit environ 300 000 jeunes. Elle défend les droits, innove socialement et améliore les
-                    conditions de vie et d’études.</p>
-                <p>Indépendante, militante et pluraliste, elle défend des valeurs humanistes et républicaines.</p>
-            </div>
-            <div class="video-container">
+        <section class="card reveal" style="margin-bottom: 3rem;" id="equipenationale">
+         <div>
+             <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-color);">
+                 Présentation</h2>
+             <p style="margin-bottom: 1rem;">Fondée en 1989, la FAGE regroupe près de 2 000 associations et
+                 syndicats, soit environ 300 000 jeunes. Elle défend les droits, innove socialement et améliore les
+                 conditions de vie et d’études.</p>
+             <p>Indépendante, militante et pluraliste, elle défend des valeurs humanistes et républicaines.</p>
+         </div>
+     </section>
+ <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/G6Egva74tiI" title="Présentation FAGE" frameborder="0"
                     allowfullscreen></iframe>
             </div>
-        </section>
+        <br>
+         <div style="display: flex;  justify-content: center;">
+                           <h3 style="font-size: 1.8rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 1rem; line-height: 1.2;">
+                               Fédérations et<br>équipe nationale
+                           </h3>
 
-        <section class="card reveal" style="margin-bottom: 3rem;" id="equipenationale">
-            <div class="grid-2">
-                <div>
-                    <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 1.5rem;">
-                        Fédérations et équipe nationale</h3>
+                       </div>
 
-                    <div class="info-box box-blue">
-                        <h4>Fédérations territoriales</h4>
-                        <p>Actions locales, accompagnement des associations et représentation politique dans chaque
-                            région.</p>
-                    </div>
+       <section class="card reveal" style="margin-bottom: 3rem;" id="equipenationale">
 
-                    <div class="info-box box-green">
-                        <h4>Fédérations de filières</h4>
-                        <p>Représentation nationale des disciplines, suivi des problématiques spécifiques.</p>
-                    </div>
+           <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 1.5rem;">
+               Fédérations et équipe nationale
+           </h3>
 
-                    <div class="info-box box-yellow">
-                        <h4>Équipe nationale</h4>
-                        <p>Coordonne les actions au niveau national, définit les grandes orientations.</p>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: center; justify-content: center;">
-                    <img src="https://www.fage.org/ressources/imageBank/96/560x-8085-FAGE_discussion_groupe_SNEE19.jpeg"
-                        alt="Équipe FAGE" style="border-radius: 1rem;">
-                </div>
-            </div>
-        </section>
+           <div class="grid-2">
+
+               <div class="info-box box-blue" style="margin: 0; height: 100%;">
+                   <h4>Fédérations territoriales</h4>
+                   <p>Actions locales et représentation politique dans chaque région.</p>
+               </div>
+
+               <div class="info-box box-green" style="margin: 0; height: 100%;">
+                   <h4>Fédérations de filières</h4>
+                   <p>Représentation nationale des disciplines (Santé, Sciences...).</p>
+               </div>
+
+               <div class="info-box box-yellow" style="margin: 0; height: 100%;">
+                   <h4>Équipe nationale</h4>
+                   <p>Le Bureau National coordonne les actions et porte la voix de la FAGE.</p>
+               </div>
+
+               <div class="info-box box-blue" style="margin: 0; height: 100%;">
+                   <h4>Conseil d'Administration</h4>
+                   <p>L'organe de décision où siègent toutes les fédérations membres.</p>
+               </div>
+
+           </div>
+       </section>
 
         <section class="reveal" id="visuels">
             <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem;">Graphiques & Visuels</h2>
