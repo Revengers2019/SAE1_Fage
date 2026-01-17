@@ -34,6 +34,8 @@ fage/
 │   ├── db.php
 │   ├── footer.php
 │   ├── head.php
+│   ├── navbar.admin.php
+│   ├── roleverif.php
 │   ├── nav.php
 │   └── router.php
 │
