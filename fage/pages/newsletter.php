@@ -110,6 +110,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['email'])) {
     </main>
 
     <?php include 'includes/footer.php'; ?>
+            <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>
