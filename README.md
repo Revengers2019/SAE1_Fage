@@ -20,6 +20,10 @@ Groupe 205 :
 
 🔑 Compte Admin : Email --> admin@fage.fr Mdp --> admin
 
+# Lien pour ouvrir le site sinon en version heberger :
+
+https://projet-fage.rf.gd/index.php?/=/
+
 # DIAGRAMME ARCHITECTURE SITE
 
 ```text
