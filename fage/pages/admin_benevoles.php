@@ -75,8 +75,9 @@ require "includes/head.php";
     <div class="container">
 
         <h1>Gestion des Équipes Terrain 👷</h1>
+        <a href="?/=/admin" class="btn btn-white" style="text-decoration: underline">Retour</a>
         <p>Ajoutez les bénévoles qui vous contactent par mail directement dans leur mission.</p>
-
+        
         <?php if (!empty($msg)): ?>
             <div style="background: #dcfce7; color: #166534; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
                 <?php echo $msg; ?>
