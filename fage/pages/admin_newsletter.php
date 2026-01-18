@@ -64,7 +64,7 @@ require "includes/head.php";
         <div class="card">
             <h2
                 style="color:var(--primary-blue); margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom:10px;">
-                📧 Liste des inscrits (<?php echo count($inscrits); ?>)
+                📧 Liste des inscrits (<?php echo count($inscrits); ?>) <a href="?/=/admin" class="btn btn-white" style="text-decoration: underline">Retour</a>
             </h2>
 
             <?php if ($message): ?>
